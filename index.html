@@ -87,10 +87,14 @@
     <section id="subscribe" class="subscribe">
       <h2>Subscribe</h2>
       <p>Get one poem a week directly to your inbox. No spam, just stillness.</p>
-      <form name="subscribe" id="subscribe-form" method="POST" data-netlify="true">
-        <input type="email" id="email" name="email" value = "email" placeholder="you@example.com" required />
+      <form name="subscribe" method="POST" data-netlify="true">
+        <!-- Hidden field required for Netlify detection -->
+          <input type="hidden" name="form-name" value="subscribe" />
+
+        <input type="email" name="email" placeholder="you@example.com" required />
         <button type="submit" class="btn-primary">Subscribe</button>
       </form>
+
       
 
       <p class="note">You can unsubscribe at any time.</p>
